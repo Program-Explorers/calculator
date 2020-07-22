@@ -29,4 +29,28 @@ percent.grid(row=1, column=2)
 divide = tk.Button(frame, text='÷')
 divide.grid(row=1, column=3)
 
+num_7 = tk.Button(frame, text='7')
+num_7.grid(row=2,column=0)
+
+num_8 = tk.Button(frame, text='8')
+num_8.grid(row=2,column=1)
+
+num_9 = tk.Button(frame, text='9')
+num_9.grid(row=2,column=2)
+
+multiply = tk.Button(frame, text='×')
+multiply.grid(row=2,column=3)
+
+num_4 = tk.Button(frame, text='4')
+num_4.grid(row=3,column=0)
+
+num_5 = tk.Button(frame, text='5')
+num_5.grid(row=3, column=1)
+
+num_6 = tk.Button(frame, text='6')
+num_6.grid(row=3, column=2)
+
+minus = tk.Button(frame, text='-')
+minus.grid(row=3, column=3)
+
 root.mainloop()
