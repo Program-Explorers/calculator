@@ -53,4 +53,25 @@ num_6.grid(row=3, column=2)
 minus = tk.Button(frame, text='-')
 minus.grid(row=3, column=3)
 
+num_1 = tk.Button(frame, text='1')
+num_1.grid(row=4, column=0)
+
+num_2 = tk.Button(frame, text='2')
+num_2.grid(row=4, column=1)
+
+num_3 = tk.Button(frame, text='3')
+num_3.grid(row=4, column=2)
+
+plus = tk.Button(frame, text='+')
+plus.grid(row=4, column=3)
+
+num_0 = tk.Button(frame, text='0')
+num_0.grid(row=5, column=0)
+
+decimal = tk.Button(frame, text='.')
+decimal.grid(row=5, column=1)
+
+equals = tk.Button(frame, text='=')
+equals.grid(row=5, column=2)
+
 root.mainloop()
