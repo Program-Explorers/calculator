@@ -3,13 +3,9 @@ import sys
 
 root = tk.Tk()
 
+height = 528
+width = 300
 
-if sys.platform.startswith('darwin'):
-    height = 297
-    width = 250
-if sys.platform.startswith('win32'):
-    height = 528
-    width = 300
 font_type = 'Calibri 25'
 
 root.title('Calculator')
