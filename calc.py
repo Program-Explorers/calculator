@@ -1,5 +1,17 @@
 import tkinter as tk
-import sys
+
+# def press(num):
+#     global expression
+#     expression = expression + str(num)
+#     equation.set(expression)
+#     print(expression)
+#
+#
+# def clear_exp():
+#     global expression
+#     expression = ''
+#     equation.set('0')
+
 
 root = tk.Tk()
 
