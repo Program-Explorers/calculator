@@ -36,13 +36,13 @@ output.grid()
 out_var.set('0')
 
 clear = tk.Button(frame, text='Clear', height=1, width=7, font='Calibri 25')
-clear.grid(row=1, column=0, columnspan=2, sticky='w', ipadx=10)
+clear.grid(row=1, column=0, columnspan=2, sticky='w', ipadx=10, pady=1)
 
 percent = tk.Button(frame, text='%', height=1, width=3, font='Calibri 25')
-percent.grid(row=1, column=2, ipadx=6, padx=1, sticky='w')
+percent.grid(row=1, column=2, padx=1, pady=1, ipadx=6, sticky='w')
 
-divide = tk.Button(frame, text='÷', height=1, width=4, font='Calibri 25')
-divide.grid(row=1, column=3, padx=1, sticky='w')
+divide = tk.Button(frame, text='÷', height=1, width=3, font='Calibri 25')
+divide.grid(row=1, column=3, padx=1, pady=1, ipadx=6, sticky='w')
 
 num_7 = tk.Button(frame, text='7', height=2, width=4, font='Calibri 23')
 num_7.grid(row=2, column=0, sticky='w', padx=0, pady=1)
@@ -54,7 +54,7 @@ num_9 = tk.Button(frame, text='9', height=2, width=4, font='Calibri 23')
 num_9.grid(row=2, column=2, padx=1, pady=1, sticky='w')
 
 multiply = tk.Button(frame, text='×',  height=2, width=4, font='Calibri 23')
-multiply.grid(row=2,column=3,padx=1, pady=1, sticky='w')
+multiply.grid(row=2, column=3, padx=1, pady=1, sticky='w')
 
 num_4 = tk.Button(frame, text='4', height=2, width=4, font='Calibri 23')
 num_4.grid(row=3, column=0, sticky='w', pady=1)
@@ -63,10 +63,10 @@ num_5 = tk.Button(frame, text='5', height=2, width=4, font='Calibri 23')
 num_5.grid(row=3, column=1, sticky='w', padx=1, pady=1)
 
 num_6 = tk.Button(frame, text='6', height=2, width=4, font='Calibri 23')
-num_6.grid(row=3, column=2)
+num_6.grid(row=3, column=2, padx=1, pady=1)
 
-minus = tk.Button(frame, text='-')
-minus.grid(row=3, column=3)
+minus = tk.Button(frame, text='-', height=2, width=4, font='Calibri 23')
+minus.grid(row=3, column=3, sticky='w', padx=1)
 
 num_1 = tk.Button(frame, text='1', height=2, width=4, font='Calibri 23')
 num_1.grid(row=4, column=0, sticky='w', pady=1)
@@ -77,17 +77,17 @@ num_2.grid(row=4, column=1, sticky='w', padx=1, pady=1)
 num_3 = tk.Button(frame, text='3', height=2, width=4, font='Calibri 23')
 num_3.grid(row=4, column=2, sticky='w', padx=1, pady=1)
 
-plus = tk.Button(frame, text='+')
-plus.grid(row=4, column=3)
+plus = tk.Button(frame, text='+', height=2, width=4, font='Calibri 23')
+plus.grid(row=4, column=3, padx=1, pady=1, sticky='w')
 
 num_0 = tk.Button(frame, text='0', height=1, width=8, font='Calibri 25')
 num_0.grid(row=5, column=0, columnspan=2, ipadx=2, sticky='w', pady=1)
 
-decimal = tk.Button(frame, text='.')
-decimal.grid(row=5, column=2)
+decimal = tk.Button(frame, text='.', height=1, width=3, font='Calibri 25')
+decimal.grid(row=5, column=2, sticky='w', padx=1, pady=1, ipadx=7)
 
-equals = tk.Button(frame, text='=')
-equals.grid(row=5, column=3)
+equals = tk.Button(frame, text='=', height=1, width=3, font='Calibri 25')
+equals.grid(row=5, column=3, padx=1, pady=1, ipadx=6, sticky='w')
 
 root.mainloop()
 
