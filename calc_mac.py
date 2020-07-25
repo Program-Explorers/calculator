@@ -30,6 +30,9 @@ def press(num):
 
 def clear_exp():
     global expression
+    global fresh_expression
+
+    fresh_expression = ''
     expression = ''
     equation.set('0')
 
