@@ -57,7 +57,7 @@ divide.grid(row=1, column=3, padx=1, sticky='w', pady=1, ipadx=6)
 num_7 = tk.Button(frame, text='7', height=2, width=4, font='Calibri 23', command=lambda: press(7))
 num_7.grid(row=2, column=0, sticky='w', padx=1, pady=1)
 
-num_8 = tk.Button(frame, text='8', height=2, width=4, font='Calibri 23',  command=lambda: press(8))
+num_8 = tk.Button(frame, text='8', height=2, width=4, font='Calibri 23', command=lambda: press(8))
 num_8.grid(row=2, column=1, sticky='w', padx=1, pady=1)
 
 num_9 = tk.Button(frame, text='9', height=2, width=4, font='Calibri 23', command=lambda: press(9))
