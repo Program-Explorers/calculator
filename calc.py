@@ -13,6 +13,7 @@ import tkinter as tk
 #     equation.set('0')
 expression = ''
 
+
 def press(num):
     global expression
 
@@ -24,6 +25,8 @@ def press(num):
         equation.set(expression)
 
     print(expression)
+
+
 def eval_expression():
     try:
         global expression

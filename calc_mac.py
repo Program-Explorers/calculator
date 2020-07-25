@@ -1,27 +1,72 @@
 import tkinter as tk
 
 expression = ''
-
-operations = ['+', '×', '÷', '-']
+fresh_expression = ''
+ans = ''
 
 
 def press(num):
     global expression
+    global fresh_expression
 
-    if num == '+' or num == '-' or num == '×' or num == '÷':
+    fresh_expression = fresh_expression + str(num)
+
+    if num == '+' or num == '-':
         equation.set(num)
         expression = expression + str(num)
+
+    elif num == '×':
+        equation.set(num)
+        expression = expression + str('*')
+
+    elif num == '÷':
+        equation.set(num)
+        expression = expression + str('/')
+
     else:
         expression = expression + str(num)
-        equation.set(expression)
-
-    print(expression)
+        equation.set(fresh_expression)
 
 
 def clear_exp():
     global expression
     expression = ''
     equation.set('0')
+
+
+def eval_expression():
+    try:
+        global expression
+        global fresh_expression
+        global ans
+
+        total = str(eval(expression))
+        ans = total
+        equation.set(total)
+
+        expression = ""
+        fresh_expression = ''
+
+    except:
+        equation.set(" error ")
+        expression = ""
+        fresh_expression = ''
+
+
+def get_ans():
+    global ans
+    global expression
+    global fresh_expression
+
+    if len(expression) > 1:
+        expression = expression + ans
+        fresh_expression = expression + ans
+        equation.set(ans)
+
+    else:
+        equation.set(ans)
+        expression = ans
+        fresh_expression = ans
 
 
 root = tk.Tk()
@@ -48,8 +93,8 @@ equation.set('0')
 clear = tk.Button(frame, text='Clear', height=1, width=7, font='Calibri 25', command=lambda: clear_exp())
 clear.grid(row=1, column=0, columnspan=2, padx=1, sticky='w', ipadx=7, pady=1)
 
-percent = tk.Button(frame, text='%', height=1, width=3, font='Calibri 25')
-percent.grid(row=1, column=2, ipadx=6, padx=1, sticky='w', pady=1)
+ans = tk.Button(frame, text='Ans', height=1, width=3, font='Calibri 25', command=lambda: get_ans())
+ans.grid(row=1, column=2, ipadx=6, padx=1, sticky='w', pady=1)
 
 divide = tk.Button(frame, text='÷', height=1, width=3, font='Calibri 25', command=lambda: press('÷'))
 divide.grid(row=1, column=3, padx=1, sticky='w', pady=1, ipadx=6)
@@ -96,7 +141,7 @@ num_0.grid(row=5, column=0, columnspan=2, ipadx=7, sticky='w', pady=1, padx=1)
 decimal = tk.Button(frame, text='.', height=1, width=3, font='Calibri 25', command=lambda: press('.'))
 decimal.grid(row=5, column=2, sticky='w', padx=1, pady=1, ipadx=6)
 
-equals = tk.Button(frame, text='=', height=1, width=3, font='Calibri 25')
+equals = tk.Button(frame, text='=', height=1, width=3, font='Calibri 25', command=eval_expression)
 equals.grid(row=5, column=3, padx=1, pady=1, ipadx=6)
 
 root.mainloop()
