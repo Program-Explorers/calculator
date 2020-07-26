@@ -3,11 +3,16 @@ import tkinter as tk
 expression = ''
 fresh_expression = ''
 ans = ''
+font_size = 40
 
 
 def press(num):
     global expression
     global fresh_expression
+    global font_size
+
+    if len(expression) > 11:
+        font_size -= 10
 
     fresh_expression = fresh_expression + str(num)
 
@@ -77,7 +82,6 @@ root = tk.Tk()
 height = 300
 width = 260
 
-font_size = 40
 
 root.title('Calculator')
 
@@ -90,8 +94,9 @@ frame.place(relheight=1, relwidth=1)
 equation = tk.StringVar()
 
 output = tk.Label(frame, textvariable=equation, bg='#2b2929', fg='#ffffff', font="Calibri " + str(font_size))
-output.grid(columnspan=4, sticky='w')
+output.grid(columnspan=4, sticky='e')
 equation.set('0')
+
 
 clear = tk.Button(frame, text='Clear', height=1, width=7, font='Calibri 25', command=lambda: clear_exp())
 clear.grid(row=1, column=0, columnspan=2, padx=1, sticky='w', ipadx=7, pady=1)
