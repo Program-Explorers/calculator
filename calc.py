@@ -1,32 +1,10 @@
 import tkinter as tk
+import tkinter.font as font
 
 expression = ''
 fresh_expression = ''
 ans = ''
-
-
-def press(num):
-    global expression
-    global fresh_expression
-
-    fresh_expression = fresh_expression + str(num)
-
-    if num == '+' or num == '-':
-        equation.set(num)
-        expression = expression + str(num)
-
-    elif num == '×':
-        equation.set(num)
-        expression = expression + str('*')
-
-    elif num == '÷':
-        equation.set(num)
-        expression = expression + str('/')
-
-    else:
-        expression = expression + str(num)
-        equation.set(fresh_expression)
-
+font_size = 40
 
 def clear_exp():
     global expression
@@ -44,6 +22,7 @@ def eval_expression():
         global ans
 
         total = str(eval(expression))
+
         ans = total
         equation.set(total)
 
@@ -74,10 +53,9 @@ def get_ans():
 
 root = tk.Tk()
 
+root.resizable(0, 0)
 height = 528
 width = 300
-
-font_type = 'Calibri 25'
 
 root.title('Calculator')
 
@@ -85,13 +63,35 @@ canvas = tk.Canvas(root, height=height, width=width)
 canvas.pack()
 
 in_output = '0'
+def press(num):
+    global expression
+    global fresh_expression
+    global font_size
+    fresh_expression = fresh_expression + str(num)
+    if num == '+' or num == '-':
+        equation.set(num)
+        expression = expression + str(num)
+
+    elif num == '×':
+        equation.set(num)
+        expression = expression + str('*')
+
+    elif num == '÷':
+        equation.set(num)
+        expression = expression + str('/')
+
+    else:
+        expression = expression + str(num)
+        equation.set(fresh_expression)
 
 frame = tk.Frame(root, bg='#2b2929')
 frame.place(relheight=1, relwidth=1)
 
 equation = tk.StringVar()
-output = tk.Label(frame, textvariable=equation, bg='#2b2929', fg='#ffffff', font="Calibri 40")
-output.grid(columnspan=4, sticky='w')
+
+output = tk.Label(frame, textvariable=equation, bg='#2b2929', fg='#ffffff')
+output.config(font=("Calibri", font_size))
+output.grid(columnspan=4, sticky='e')
 equation.set('0')
 
 clear = tk.Button(frame, text='Clear', height=1, width=7, font='Calibri 25', bg='#202224', fg='#ffffff',
